@@ -1,8 +1,17 @@
 cmake_minimum_required(VERSION 3.1)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}")
-set (CMAKE_BUILD_TYPE "Release")
-set (CMAKE_BINARY_DIR "./example")
 
+# list usage https://www.jianshu.com/p/89fb01752d6f
+# multiple-level file cmake demo https://blog.csdn.net/qq_26849933/article/details/116454719
+
+# ${CMAKE_CURRENT_SOURCE_DIR}  ---- path when has self CMakeLists.txt to be run
+# specify FindOpenNI2.cmake path so that it will work
+# the better way is put all *.cmake in folder cmake, then set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+# also list is a alternative list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake") 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}")
+set(CMAKE_BUILD_TYPE "Release")
+set(CMAKE_BINARY_DIR "./example")
+
+# for clang complier
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(OpenGL REQUIRED)
