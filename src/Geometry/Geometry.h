@@ -98,7 +98,7 @@ namespace geometry {
     double ComputeReprojectionError3D(const PointCorrespondenceSet & correspondence_set,
         const SE3 &camera_pose);
 
-    # https://blog.csdn.net/weixin_41860709/article/details/105095914
+    // https://blog.csdn.net/weixin_41860709/article/details/105095914
     struct VoxelGridHasher
     {
             // Three large primes are used for spatial hashing.
