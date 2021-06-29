@@ -74,7 +74,8 @@ namespace tool
             cv::Mat depth_image( frame_depth.getHeight(), frame_depth.getWidth(), CV_16UC1, (void*)frame_depth.getData());
 
             cv::Mat color_image(frame_color.getHeight(), frame_color.getWidth(), CV_8UC3, (void*)frame_color.getData());
-            cv::cvtColor( color_image, rgb, CV_RGB2BGR );
+            // cv::cvtColor( color_image, rgb, CV_RGB2BGR );
+            cv::cvtColor( color_image, rgb, cv::COLOR_RGB2BGR);
             depth = depth_image;
         }
         void Close()

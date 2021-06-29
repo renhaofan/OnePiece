@@ -4,6 +4,17 @@
 #include "Geometry/KDTree.h"
 #include "Tool/ConsoleColor.h"
 #include <opencv2/core/core.hpp>
+
+#include <opencv2/highgui/highgui_c.h> // opencv version 4.5.2
+/*
+    credit: https://www.gitmemory.com/issue/MIT-SPARK/Kimera-VIO/1/534189362
+    for version > 4, some macro not declared in this scope
+    * CV_TERMCRIT_EPS
+    * CV_TERMCRIT_ITER
+    * CV_FILLED
+    * CV_AA
+*/
+
 namespace one_piece
 {
 namespace algorithm

@@ -1,5 +1,11 @@
 #include "GlobalRegistration.h"
 #include <opencv2/core/eigen.hpp>
+
+/*
+error: variable ‘std::ofstream ofs’ has initializer but incomplete type
+*/
+#include<fstream> 
+
 namespace one_piece
 {
 namespace registration
