@@ -12,7 +12,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <opencv/cv.h>
+
+
+// #include <opencv/cv.h>
+/*
+	Not like opencv3, opencv/cv.h is fused into opencv2/imgproc.hpp in opencv4
+*/
+#include <opencv2/imgproc.hpp>
+
 #include <opencv2/opencv.hpp>
 #include "mild.hpp"
 namespace MILD
