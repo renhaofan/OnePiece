@@ -9,10 +9,20 @@ cmake_minimum_required(VERSION 3.1)
 # also list is a alternative list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake") 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}")
 set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_BINARY_DIR "./example")
+
+# solve debug ./example/CMakeFiles/CMakeTmp", when out-of-source complle 
+set(CMAKE_BINARY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/example")
 
 # for clang complier
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# specify OpenGL version
+# credit: https://blog.csdn.net/u010815558/article/details/90288869
+# credit: https://github.com/ilpincy/argos3/issues/88
+if (POLICY CMP0072)
+  set(OpenGL_GL_PREFERENCE LEGACY)
+endif()
+
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
