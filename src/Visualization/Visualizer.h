@@ -282,7 +282,8 @@ namespace visualization
         //fragment shader
         std::string shader_frag = "draw_feedback.frag";
 
-        std::string shader_path = "../../src/Visualization/Shaders";
+        // std::string shader_path = "../../src/Visualization/Shaders";
+        std::string shader_path = "../src/Visualization/Shaders";
         bool draw_normal = false;
         bool draw_color = false;
         bool draw_color_phong = true;
