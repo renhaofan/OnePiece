@@ -53,11 +53,11 @@ namespace geometry {
     typedef Eigen::Matrix<unsigned int, 2, 1> Point2ui;
     typedef Eigen::Matrix<unsigned int, 3, 1> Point3ui;
     //cpp 11 support alias
+    // example Vector<2> v(1,2);
     template <int T>
         using Vector = Eigen::Matrix<scalar, T, 1>;
+
     
-    // typedef cv::Vec<geometry::scalar,3> Point3CV;
-    // typedef cv::Vec<geometry::scalar,2> Point2CV;
     typedef std::pair<Point3, Point3> PointCorrespondence;
     typedef std::vector<PointCorrespondence> PointCorrespondenceSet;
     typedef std::vector<cv::KeyPoint> KeyPointSet;
@@ -98,6 +98,7 @@ namespace geometry {
     double ComputeReprojectionError3D(const PointCorrespondenceSet & correspondence_set,
         const SE3 &camera_pose);
 
+    # https://blog.csdn.net/weixin_41860709/article/details/105095914
     struct VoxelGridHasher
     {
             // Three large primes are used for spatial hashing.
@@ -121,6 +122,9 @@ namespace geometry {
                 return ( key(0) * p1 ^ key(1) * p2 );
             }
     };
+
+    // fit plane https://blog.csdn.net/iamqianrenzhan/article/details/103463130
+    //
 
     TransformationMatrix RandomTransformation();
     Plane GetPlane(const Point3 &p1, const Point3 &p2, const Point3 &p3);

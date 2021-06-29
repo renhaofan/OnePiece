@@ -15,6 +15,7 @@ namespace geometry
     class PointCloud
     {
         public:
+            // default https://www.zhihu.com/question/467102319/answer/1960133017
             PointCloud()=default; 
             size_t GetSize() const
             {
