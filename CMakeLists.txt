@@ -204,9 +204,14 @@ add_executable(ScannetToTum "example/ScannetToTum.cpp")
 add_executable(OppoToTum "example/OppoToTum.cpp")
 add_executable(GenerateModelFromScannet "example/GenerateModelFromScannet.cpp")
 add_executable(GetLabelUsingKDTree "example/GetLabelUsingKDTree.cpp")
-add_executable(FBAFusion ${FBAFusion_SRC})
-add_executable(BAFusion ${BAFusion_SRC})
-add_executable(DenseFusion ${DenseFusion_SRC})
+# FBAFusion has the same name with folder "FBAFusion", which results in generation executable failure
+# /usr/bin/ld:cannot open output file:Is a directory
+#add_executable(FBAFusion ${FBAFusion_SRC})
+#add_executable(BAFusion ${BAFusion_SRC})
+#add_executable(DenseFusion ${DenseFusion_SRC})
+add_executable(FBAFusion_exe ${FBAFusion_SRC})
+add_executable(BAFusion_exe ${BAFusion_SRC})
+add_executable(DenseFusion_exe ${DenseFusion_SRC})
 
 set(THIRD_LIB 
     tinyply 
@@ -331,15 +336,15 @@ target_link_libraries(GetLabelUsingKDTree
     one_piece
     ${THIRD_LIB}
 )
-target_link_libraries(FBAFusion
+target_link_libraries(FBAFusion_exe
     one_piece
     ${THIRD_LIB}
 )
-target_link_libraries(BAFusion
+target_link_libraries(BAFusion_exe
     one_piece
     ${THIRD_LIB}
 )
-target_link_libraries(DenseFusion
+target_link_libraries(DenseFusion_exe
     one_piece
     ${THIRD_LIB}
 )
